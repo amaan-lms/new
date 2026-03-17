@@ -2,53 +2,33 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // IMPORT IMAGES
-import img1 from "../assets/gallery/a.jfif";
-import img2 from "../assets/gallery/aa.jfif";
-import img3 from "../assets/gallery/b.jpg";
-import img4 from "../assets/gallery/bb.jpg";
-import img5 from "../assets/gallery/c.jfif";
-import img6 from "../assets/gallery/cc.jpg";
-import img7 from "../assets/gallery/d.jfif";
-// import img8 from "../assets/gallery/dd.jfif";
-import img9 from "../assets/gallery/e.jfif";
-import img10 from "../assets/gallery/ee.jfif";
-import img11 from "../assets/gallery/f.jfif";
-import img12 from "../assets/gallery/f.jpg";
-import img13 from "../assets/gallery/ff.jpg";
-import img14 from "../assets/gallery/g.jfif";
-import img15 from "../assets/gallery/gg.jfif";
-import img16 from "../assets/gallery/h.jfif";
-import img17 from "../assets/gallery/hh.jpg";
-import img18 from "../assets/gallery/i.jpg";
-import img19 from "../assets/gallery/ii.jpg";
-// import img20 from "../assets/gallery/j.jpg";
-import img21 from "../assets/gallery/jj.jpg";
-import img22 from "../assets/gallery/k.jfif";
-import img23 from "../assets/gallery/l.jpg";
-import img24 from "../assets/gallery/ll.jpg";
-import img25 from "../assets/gallery/m.jfif";
-import img26 from "../assets/gallery/nn.jpg";
-import img27 from "../assets/gallery/o.jpg";
-import img28 from "../assets/gallery/oo.jpg";
-import img29 from "../assets/gallery/p.jfif";
-import img30 from "../assets/gallery/r.jpg";
-import img31 from "../assets/gallery/s.jfif";
-import img32 from "../assets/gallery/t.jfif";
-// import img33 from "../assets/gallery/u.jpg";
-// import img34 from "../assets/gallery/v.jfif";
-import img35 from "../assets/gallery/w.jfif";
-import img36 from "../assets/gallery/x.jpg";
-import img37 from "../assets/gallery/y.jfif";
-import img38 from "../assets/gallery/z.jfif";
+import img1 from "../assets/JPEG image 9.jpeg";
+import img2 from "../assets/JPEG image 6.jpeg";
+import img3 from "../assets/JPEG image 2.jpeg";
+import img4 from "../assets/IMG_9668.jpg";
+import img5 from "../assets/IMG_9588.jpeg";
+import img6 from "../assets/IMG_9476.jpg";
+import img7 from "../assets/IMG_9468.jpg";
+import img8 from "../assets/IMG_9466.jpg";
+import img9 from "../assets/IMG_9044.jpeg";
+import img10 from "../assets/IMG_8751.jpeg";
+import img11 from "../assets/IMG_5943.jpeg";
+import img12 from "../assets/IMG_3870.jpeg";
+import img13 from "../assets/IMG_3714 2.JPG";
+import img14 from "../assets/IMG_3416.jpeg";
+import img15 from "../assets/IMG_3408.jpeg";
+import img16 from "../assets/IMG_3025.jpeg";
+import img17 from "../assets/IMG_2098.jpeg";
+import img18 from "../assets/IMG_1565.jpeg";
+import img19 from "../assets/IMG_0853.jpeg";
+import img20 from "../assets/20150730_140540.jpg";
 
 export default function MasonryGallery() {
     const [selected, setSelected] = useState(null);
 
     const images = [
-        img1, img2, img3, img4, img5, img6, img7, img9, img10,
-        img11, img12, img13, img14, img15, img16, img17, img18, img19, 
-        img21, img22, img23, img24, img25, img26, img27, img28, img29, img30,
-        img31, img32, img35, img36, img37, img38,
+        img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+        img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
     ];
 
     // Close modal on ESC
