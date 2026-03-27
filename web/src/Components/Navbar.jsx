@@ -54,11 +54,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500
-      ${showNav ? "translate-y-0" : "-translate-y-full"}
-      `}
+      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-black/20"
     >
-      <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center">
+      <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center relative">
 
         {/* Logo */}
         <div
@@ -107,8 +105,15 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white text-3xl drop-shadow-lg"
+          className="md:hidden absolute right-18 top-1/2 -translate-y-1/2 text-white text-3xl drop-shadow-lg p-2 flex items-center justify-center rounded-lg bg-black/40 border border-red-500/50"
+          style={{ 
+            textShadow: "2px 2px 10px rgba(239, 68, 68, 0.9), 0 0 20px rgba(239, 68, 68, 0.6)",
+            minWidth: "44px",
+            minHeight: "44px",
+            boxShadow: "0 0 15px rgba(239, 68, 68, 0.5)"
+          }}
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
           ☰
         </button>
@@ -118,6 +123,10 @@ export default function Navbar() {
       <div
         className={`md:hidden transition-all duration-500
         ${isOpen ? "max-h-80 p-4" : "max-h-0 p-0 overflow-hidden"}`}
+        style={{ 
+          boxShadow: isOpen ? "0 10px 40px rgba(239, 68, 68, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3)" : "none",
+          backgroundColor: "rgba(0, 0, 0, 0.3)"
+        }}
       >
         {navItems.map((item) => (
           <button
