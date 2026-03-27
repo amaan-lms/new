@@ -1,3 +1,4 @@
+import OptimizedVideo from "./OptimizedVideo";
 import bgVideo from "../assets/IMG_6537.mov";
 
 export default function Hero() {
@@ -11,32 +12,13 @@ export default function Hero() {
       "
     >
       {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="
-          absolute inset-0 w-full h-full 
-          object-cover z-0
-        "
-      >
-        <source src={bgVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Red + Black gradient overlay */}
-      <div
-        className="
-          absolute inset-0 
-          bg-gradient-to-br 
-          from-red-700/60 via-red-800/40 to-black/80
-          z-10
-        "
-      ></div>
+      <OptimizedVideo 
+        videoSrc={bgVideo}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
 
       {/* Content */}
-      <div className="relative z-20 text-center text-white max-w-3xl px-4 sm:px-6 pt-20 sm:pt-10">
+      <div className="relative z-10 text-center text-white max-w-3xl px-4 sm:px-6 pt-20 sm:pt-10">
         
         {/* Title */}
         <h1

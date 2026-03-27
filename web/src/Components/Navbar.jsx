@@ -56,7 +56,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500
       ${showNav ? "translate-y-0" : "-translate-y-full"}
-      bg-white/90 backdrop-blur-xl shadow-lg border-b border-red-100`}
+      `}
     >
       <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center">
 
@@ -70,9 +70,9 @@ export default function Navbar() {
             alt="Giovanni's Landscaping Logo"
             className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition duration-300 hover:scale-110"
           />
-          <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition"
-            style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
-            Giovanni’s Landscaping
+          <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition text-white drop-shadow-lg shadow-red-500/50"
+            style={{ fontFamily: "'Times New Roman', Georgia, serif", textShadow: "3px 3px 16px rgba(239, 68, 68, 0.8), 1px 1px 4px rgba(239, 68, 68, 0.9)" }}>
+            Giovanni's Landscaping
           </span>
         </div>
 
@@ -86,9 +86,10 @@ export default function Navbar() {
             >
               <span
                 className={`transition ${active === item.id
-                    ? "text-red-600"
-                    : "text-gray-900 group-hover:text-red-500"
-                  }`}
+                    ? "text-red-300"
+                    : "text-white group-hover:text-red-300"
+                  } drop-shadow-lg`}
+                style={{ textShadow: "2px 2px 10px rgba(239, 68, 68, 0.7), 1px 1px 3px rgba(239, 68, 68, 0.8)" }}
               >
                 {item.label}
               </span>
@@ -106,7 +107,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-red-600 text-3xl"
+          className="md:hidden text-white text-3xl drop-shadow-lg"
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰
@@ -115,16 +116,17 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-white shadow-lg transition-all duration-500
+        className={`md:hidden transition-all duration-500
         ${isOpen ? "max-h-80 p-4" : "max-h-0 p-0 overflow-hidden"}`}
       >
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => handleNavClick(item)}
-            className={`w-full text-left py-4 text-lg font-medium border-b
-              ${active === item.id ? "text-red-600" : "text-gray-900"}
+            className={`w-full text-left py-4 text-lg font-medium border-b border-white/20 text-white drop-shadow-lg
+              ${active === item.id ? "text-red-300" : "text-white"}
             `}
+            style={{ textShadow: "2px 2px 10px rgba(239, 68, 68, 0.7), 1px 1px 3px rgba(239, 68, 68, 0.8)" }}
           >
             {item.label}
           </button>
