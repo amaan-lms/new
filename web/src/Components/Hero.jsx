@@ -36,8 +36,10 @@ export default function Hero() {
         <p
           className="
             text-sm sm:text-lg md:text-xl 
-            mb-8 sm:mb-10 opacity-90 
+            mb-8 sm:mb-10 
             animate-fadeInSlow leading-relaxed
+            bg-red-600/30 backdrop-blur-sm
+            px-6 py-3 rounded-xl
           "
         >
           Premium landscaping crafted with precision, passion, and quality service.

@@ -6,16 +6,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [showNav, setShowNav] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Hide navbar on scroll
+  // Hide navbar on scroll and track scroll position for background change
   useEffect(() => {
     let lastScroll = window.scrollY;
     const handleScroll = () => {
       const current = window.scrollY;
       setShowNav(current < lastScroll || current < 10);
+      setIsScrolled(current > 50);
       lastScroll = current;
     };
     window.addEventListener("scroll", handleScroll);
@@ -54,7 +56,9 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-black/20"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? "bg-white shadow-lg" : "bg-black/20"
+      }`}
     >
       <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center relative">
 
