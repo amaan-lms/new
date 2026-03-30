@@ -72,8 +72,15 @@ export default function Navbar() {
             alt="Giovanni's Landscaping Logo"
             className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition duration-300 hover:scale-110"
           />
-          <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition text-white drop-shadow-lg shadow-red-500/50"
-            style={{ fontFamily: "'Times New Roman', Georgia, serif", textShadow: "3px 3px 16px rgba(239, 68, 68, 0.8), 1px 1px 4px rgba(239, 68, 68, 0.9)" }}>
+          <span className={`text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition ${
+            isScrolled ? "text-gray-900" : "text-white"
+          } drop-shadow-lg`}
+            style={{ 
+              fontFamily: "'Times New Roman', Georgia, serif", 
+              textShadow: isScrolled 
+                ? "none" 
+                : "3px 3px 16px rgba(239, 68, 68, 0.8), 1px 1px 4px rgba(239, 68, 68, 0.9)"
+            }}>
             Giovanni's Landscaping
           </span>
         </div>
@@ -88,10 +95,10 @@ export default function Navbar() {
             >
               <span
                 className={`transition ${active === item.id
-                    ? "text-red-300"
-                    : "text-white group-hover:text-red-300"
+                    ? isScrolled ? "text-red-600" : "text-red-300"
+                    : isScrolled ? "text-gray-900 group-hover:text-red-600" : "text-white group-hover:text-red-300"
                   } drop-shadow-lg`}
-                style={{ textShadow: "2px 2px 10px rgba(239, 68, 68, 0.7), 1px 1px 3px rgba(239, 68, 68, 0.8)" }}
+                style={{ textShadow: isScrolled ? "none" : "2px 2px 10px rgba(239, 68, 68, 0.7), 1px 1px 3px rgba(239, 68, 68, 0.8)" }}
               >
                 {item.label}
               </span>
@@ -109,12 +116,16 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden absolute right-18 top-1/2 -translate-y-1/2 text-white text-3xl drop-shadow-lg p-2 flex items-center justify-center rounded-lg bg-black/40 border border-red-500/50"
+          className={`md:hidden absolute right-18 top-1/2 -translate-y-1/2 text-3xl drop-shadow-lg p-2 flex items-center justify-center rounded-lg border ${
+            isScrolled 
+              ? "text-gray-900 bg-white border-gray-300" 
+              : "text-white bg-black/40 border-red-500/50"
+          }`}
           style={{ 
-            textShadow: "2px 2px 10px rgba(239, 68, 68, 0.9), 0 0 20px rgba(239, 68, 68, 0.6)",
+            textShadow: isScrolled ? "none" : "2px 2px 10px rgba(239, 68, 68, 0.9), 0 0 20px rgba(239, 68, 68, 0.6)",
             minWidth: "44px",
             minHeight: "44px",
-            boxShadow: "0 0 15px rgba(239, 68, 68, 0.5)"
+            boxShadow: isScrolled ? "0 2px 8px rgba(0, 0, 0, 0.1)" : "0 0 15px rgba(239, 68, 68, 0.5)"
           }}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
