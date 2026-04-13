@@ -23,12 +23,60 @@ import img18 from "../assets/IMG_1565.jpeg";
 import img19 from "../assets/IMG_0853.jpeg";
 import img20 from "../assets/20150730_140540.jpg";
 
+// GALLERY IMAGES
+import galleryA from "../assets/gallery/a.jfif";
+import galleryAA from "../assets/gallery/aa.jfif";
+import galleryB from "../assets/gallery/b.jpg";
+import galleryBB from "../assets/gallery/bb.jpg";
+import galleryC from "../assets/gallery/c.jfif";
+import galleryCC from "../assets/gallery/cc.jpg";
+import galleryD from "../assets/gallery/d.jfif";
+import galleryDD from "../assets/gallery/dd.jfif";
+import galleryE from "../assets/gallery/e.jfif";
+import galleryEE from "../assets/gallery/ee.jfif";
+import galleryF from "../assets/gallery/f.jfif";
+import galleryF2 from "../assets/gallery/f.jpg";
+import galleryFF from "../assets/gallery/ff.jpg";
+import galleryG from "../assets/gallery/g.jfif";
+import galleryGG from "../assets/gallery/gg.jfif";
+import galleryH from "../assets/gallery/h.jfif";
+import galleryHH from "../assets/gallery/hh.jpg";
+import galleryI from "../assets/gallery/i.jpg";
+import galleryII from "../assets/gallery/ii.jpg";
+import galleryJ from "../assets/gallery/j.jpg";
+import galleryJJ from "../assets/gallery/jj.jpg";
+import galleryK from "../assets/gallery/k.jfif";
+import galleryL from "../assets/gallery/l.jpg";
+import galleryLL from "../assets/gallery/ll.jpg";
+import galleryM from "../assets/gallery/m.jfif";
+import galleryNN from "../assets/gallery/nn.jpg";
+import galleryO from "../assets/gallery/o.jpg";
+import galleryOO from "../assets/gallery/oo.jpg";
+import galleryP from "../assets/gallery/p.jfif";
+import galleryQ from "../assets/gallery/q.jfif";
+import galleryR from "../assets/gallery/r.jpg";
+import galleryS from "../assets/gallery/s.jfif";
+import galleryT from "../assets/gallery/t.jfif";
+import galleryU from "../assets/gallery/u.jpg";
+import galleryV from "../assets/gallery/v.jfif";
+import galleryW from "../assets/gallery/w.jfif";
+import galleryX from "../assets/gallery/x.jpg";
+import galleryY from "../assets/gallery/y.jfif";
+import galleryZ from "../assets/gallery/z.jfif";
+
 export default function MasonryGallery() {
     const [selected, setSelected] = useState(null);
 
     const images = [
         img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
         img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+        // Gallery images
+        galleryA, galleryAA, galleryB, galleryBB, galleryC, galleryCC,
+        galleryD, galleryDD, galleryE, galleryEE, galleryF, galleryF2, galleryFF,
+        galleryG, galleryGG, galleryH, galleryHH, galleryI, galleryII,
+        galleryJ, galleryJJ, galleryK, galleryL, galleryLL, galleryM, galleryNN,
+        galleryO, galleryOO, galleryP, galleryQ, galleryR, galleryS, galleryT,
+        galleryU, galleryV, galleryW, galleryX, galleryY, galleryZ,
     ];
 
     // Close modal on ESC
