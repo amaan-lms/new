@@ -57,8 +57,13 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-black/20"
-      }`}
+        isScrolled ? "bg-white shadow-2xl" : "bg-white shadow-xl"
+      } ${showNav ? "translate-y-0" : "-translate-y-full"}`}
+      style={{
+        boxShadow: isScrolled 
+          ? "0 10px 30px rgba(0, 0, 0, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)" 
+          : "0 8px 25px rgba(0, 0, 0, 0.4), 0 3px 10px rgba(0, 0, 0, 0.3)"
+      }}
     >
       <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center relative">
 
@@ -73,13 +78,11 @@ export default function Navbar() {
             className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition duration-300 hover:scale-110"
           />
           <span className={`text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition ${
-            isScrolled ? "text-gray-900" : "text-white"
-          } drop-shadow-lg`}
+            isScrolled ? "text-gray-900" : "text-gray-900"
+          } drop-shadow-xl`}
             style={{ 
               fontFamily: "'Times New Roman', Georgia, serif", 
-              textShadow: isScrolled 
-                ? "none" 
-                : "3px 3px 16px rgba(239, 68, 68, 0.8), 1px 1px 4px rgba(239, 68, 68, 0.9)"
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)"
             }}>
             Giovanni's Landscaping
           </span>
@@ -95,10 +98,10 @@ export default function Navbar() {
             >
               <span
                 className={`transition ${active === item.id
-                    ? isScrolled ? "text-red-600" : "text-red-300"
-                    : isScrolled ? "text-gray-900 group-hover:text-red-600" : "text-white group-hover:text-red-300"
-                  } drop-shadow-lg`}
-                style={{ textShadow: isScrolled ? "none" : "2px 2px 10px rgba(239, 68, 68, 0.7), 1px 1px 3px rgba(239, 68, 68, 0.8)" }}
+                    ? isScrolled ? "text-red-600" : "text-red-600"
+                    : isScrolled ? "text-gray-900 group-hover:text-red-600" : "text-gray-900 group-hover:text-red-600"
+                  } drop-shadow-xl`}
+                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
               >
                 {item.label}
               </span>
@@ -119,13 +122,13 @@ export default function Navbar() {
           className={`md:hidden absolute right-18 top-1/2 -translate-y-1/2 text-3xl drop-shadow-lg p-2 flex items-center justify-center rounded-lg border ${
             isScrolled 
               ? "text-gray-900 bg-white border-gray-300" 
-              : "text-white bg-black/40 border-red-500/50"
+              : "text-gray-900 bg-white border-gray-300"
           }`}
           style={{ 
-            textShadow: isScrolled ? "none" : "2px 2px 10px rgba(239, 68, 68, 0.9), 0 0 20px rgba(239, 68, 68, 0.6)",
+            textShadow: "none",
             minWidth: "44px",
             minHeight: "44px",
-            boxShadow: isScrolled ? "0 2px 8px rgba(0, 0, 0, 0.1)" : "0 0 15px rgba(239, 68, 68, 0.5)"
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
           }}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
@@ -147,10 +150,10 @@ export default function Navbar() {
           <button
             key={item.id}
             onClick={() => handleNavClick(item)}
-            className={`w-full text-left py-4 text-lg font-medium border-b border-white/20 text-white drop-shadow-lg
-              ${active === item.id ? "text-red-300" : "text-white"}
+            className={`w-full text-left py-4 text-lg font-medium border-b border-gray-300 text-gray-900 drop-shadow-lg
+              ${active === item.id ? "text-red-600" : "text-gray-900"}
             `}
-            style={{ textShadow: "2px 2px 10px rgba(239, 68, 68, 0.7), 1px 1px 3px rgba(239, 68, 68, 0.8)" }}
+            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
           >
             {item.label}
           </button>
