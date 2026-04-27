@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="relative text-center md:text-left text-black max-w-2xl">
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-[1.2] md:leading-[1.25] mb-6 animate-slideDown tracking-wide">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] md:leading-[1.15] mb-6 animate-slideDown tracking-tight">
             Transforming{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">
               Landscapes
@@ -38,7 +38,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-8 py-3.5 rounded-full text-base sm:text-lg font-normal text-white bg-gradient-to-r from-red-600 to-red-600 hover:from-red-700 hover:to-red-700 shadow-lg shadow-red-200 hover:shadow-xl hover:shadow-red-300 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex items-center gap-2">
+              <button className="px-8 py-3.5 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-red-600 to-red-600 hover:from-red-700 hover:to-red-700 shadow-lg shadow-red-200 hover:shadow-xl hover:shadow-red-300 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
                 Book Appointment
               </button>
@@ -48,7 +48,7 @@ export default function Hero() {
               onClick={() =>
                 document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="px-8 py-3.5 rounded-full text-base sm:text-lg font-normal text-red-800 border-2 border-red-200 bg-white/70 backdrop-blur-sm hover:bg-red-50 hover:border-red-400 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex items-center gap-2 shadow-sm"
+              className="px-8 py-3.5 rounded-full text-base sm:text-lg font-bold text-red-800 border-2 border-red-200 bg-white/70 backdrop-blur-sm hover:bg-red-50 hover:border-red-400 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex items-center gap-2 shadow-sm"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
               View Services

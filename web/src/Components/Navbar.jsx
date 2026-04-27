@@ -57,13 +57,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "bg-white shadow-2xl" : "bg-white shadow-xl"
+        isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
       } ${showNav ? "translate-y-0" : "-translate-y-full"}`}
-      style={{
-        boxShadow: isScrolled 
-          ? "0 10px 30px rgba(0, 0, 0, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)" 
-          : "0 8px 25px rgba(0, 0, 0, 0.4), 0 3px 10px rgba(0, 0, 0, 0.3)"
-      }}
     >
       <nav className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-3 flex justify-between items-center relative">
 
@@ -77,12 +72,11 @@ export default function Navbar() {
             alt="Giovanni's Landscaping Logo"
             className="h-10 w-10 sm:h-12 sm:w-12 object-contain transition duration-300 hover:scale-110"
           />
-          <span className={`text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition ${
+          <span className={`text-base sm:text-lg md:text-xl font-bold tracking-tight hover:text-red-700 transition truncate max-w-[140px] sm:max-w-none ${
             isScrolled ? "text-gray-900" : "text-gray-900"
-          } drop-shadow-xl`}
+          }`}
             style={{ 
-              fontFamily: "'Times New Roman', Georgia, serif", 
-              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)"
+              fontFamily: "'Times New Roman', Georgia, serif"
             }}>
             Giovanni's Landscaping
           </span>
@@ -100,8 +94,7 @@ export default function Navbar() {
                 className={`transition ${active === item.id
                     ? isScrolled ? "text-red-600" : "text-red-600"
                     : isScrolled ? "text-gray-900 group-hover:text-red-600" : "text-gray-900 group-hover:text-red-600"
-                  } drop-shadow-xl`}
-                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
+                  }`}
               >
                 {item.label}
               </span>
@@ -119,41 +112,38 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className={`md:hidden absolute right-18 top-1/2 -translate-y-1/2 text-3xl drop-shadow-lg p-2 flex items-center justify-center rounded-lg border ${
+          className={`md:hidden relative text-3xl p-2 flex items-center justify-center rounded-lg border shrink-0 ${
             isScrolled 
-              ? "text-gray-900 bg-white border-gray-300" 
-              : "text-gray-900 bg-white border-gray-300"
+              ? "text-gray-900 bg-white/80 backdrop-blur-sm border-gray-300" 
+              : "text-gray-900 bg-white/20 backdrop-blur-sm border-white/40"
           }`}
           style={{ 
-            textShadow: "none",
             minWidth: "44px",
-            minHeight: "44px",
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
+            minHeight: "44px"
           }}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          ☰
+          {isOpen ? "✕" : "☰"}
         </button>
       </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-500
-        ${isOpen ? "max-h-80 p-4" : "max-h-0 p-0 overflow-hidden"}`}
+        className={`md:hidden transition-all duration-500 overflow-hidden
+        ${isOpen ? "max-h-[500px] p-4" : "max-h-0 p-0"}`}
         style={{ 
-          boxShadow: isOpen ? "0 10px 40px rgba(239, 68, 68, 0.4), 0 4px 20px rgba(0, 0, 0, 0.3)" : "none",
-          backgroundColor: "rgba(0, 0, 0, 0.3)"
+          backgroundColor: "rgba(255, 255, 255, 0.85)",
+          backdropFilter: "blur(10px)"
         }}
       >
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => handleNavClick(item)}
-            className={`w-full text-left py-4 text-lg font-medium border-b border-gray-300 text-gray-900 drop-shadow-lg
+            className={`w-full text-left py-4 text-lg font-medium border-b border-gray-300 text-gray-900
               ${active === item.id ? "text-red-600" : "text-gray-900"}
             `}
-            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
           >
             {item.label}
           </button>
